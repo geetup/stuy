@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+.wrapper{
+    width: 1230px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}

@@ -1,0 +1,341 @@
+#header{
+    background: #f00;
+    height: 32px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+}
+#login-contain{
+    line-height: 32px;
+    /*display: inline;*/
+    float: left;
+}
+#login-contain a{
+    padding-left: 20px;
+    color: #fff;
+}
+#login-contain a:hover{
+    color:red;
+}
+#header-menu{
+    float: right;
+    line-height: 32px;
+}
+#header-menu .menu{
+    float: left;
+    padding: 0 14px;
+    position: relative;
+}
+#header-menu .menu a{
+    color:#fff;
+}
+#header-menu .iconfont{
+    color: #fff;
+    font-size: 14px;
+}
+#header-menu .menu-hd::after{
+    content: '';
+    border: 3px solid transparent;
+    border-top-color: #bbb;
+    position: absolute;
+    right: 4px;
+    top:16px;
+    transform-origin: 3px 1.5px;
+}
+#header-menu .menu-hd:hover{
+    background: #ffffff;
+
+}
+#header-menu .menu-hd:hover .sub-menu{
+    display: block;
+}
+#header-menu .menu-hd:hover .scj-menu{
+    display: block;
+}
+#header-menu .menu-hd:hover .sjzc-menu{
+    display: block;
+}
+#header-menu .menu-hd:hover>a{
+    color: red;
+    text-decoration: underline;
+}
+#header-menu .menu-nav:hover a{
+    color:yellow;
+}
+
+#header-menu .menu-nav:hover a span{
+    color:#fff;
+}
+#header-menu .menu-nav a:hover span{
+    color:yellow;
+}
+#header-menu .menu-nav:hover .iconfont{
+    color:yellow;
+}
+#header-menu .menu-hd:hover::after{
+    transition: transform .2s linear;
+    transform: rotate(180deg);
+}
+#header-menu .sub-menu{
+    border: 1px solid #ccc;
+    border-top: 0;
+    position: absolute;
+    top:32px;
+    left:0;
+    width: 100px;
+    display: none;
+}
+#header-menu .sub-menu li{
+    padding: 0 14px;
+}
+#header-menu .sub-menu a{
+    color:#999;
+}
+#header-menu .sub-menu a:hover{
+    color:#f00;
+    text-decoration: underline;
+}
+#header-menu .scj-menu{
+    border: 1px solid #ccc;
+    border-top: 0;
+    position: absolute;
+    top:32px;
+    left:0;
+    width: 100px;
+    display: none;
+}
+#header-menu .scj-menu li{
+    padding: 0 14px;
+}
+#header-menu .scj-menu a{
+    color:#999;
+}
+#header-menu .scj-menu a:hover {
+    color: #f00;
+    text-decoration: underline;
+}
+#header-menu .sjzc-menu {
+    border: 1px solid #cccccc;
+    border-top: 0;
+    position: absolute;
+    top:32px;
+    left: auto;
+    right: 0;
+    display: none;
+}
+#header-menu .sjzc-menu li{
+font-size: 100%;
+    color: #666;
+    font-weight: 700;
+    padding: 8px 10px;
+    margin-top: -5px;
+    overflow: hidden;
+    width: 150px;
+    left: 0;
+    border-bottom: 1px dotted #827777;
+}
+#header-menu .sjzc-menu li a{
+    color: #666;
+    font-size: 100%;
+    margin-right: 20px;
+    line-height: 22px;
+}
+#header-menu .sjzc-menu a:hover {
+    color: red;
+    text-decoration: underline;
+}
+#search{
+    height: 130px;
+}
+#search img{
+    width: 240px;
+    float:left;
+}
+#search-contain {
+    float: left;
+    margin-top: 40px;
+    margin-left: 90px;
+}
+#search-contain .search-list li{
+    float: left;
+}
+#search-contain .search-input {
+    border: 2px solid #ff2736;
+    height: 36px;
+}
+#search-contain .search-input input {
+    width: 490px;
+    height: 36px;
+    border: 0;
+    outline: none;
+    text-indent: 10px ;
+    float: left;
+}
+#search-contain .search-input input ::placeholder {
+    color: #ccc;
+    font-size:18px;
+}
+#search-contain .search-input button{
+    width: 132px;
+    height: 36px;
+    border: 0;
+    background: #ff2736;
+    font-size: 18px;
+    outline:none;
+    float: left;
+}
+#search-contain .search-list li{
+    padding: 0 12px;
+    margin-top: 5px;
+    border-right: 1px solid #ccc;
+}
+#search-contain .search-list li.last {
+    border-right: 0;
+}
+#search-contain .search-list li.first {
+    padding-left: 0;
+}
+#search-contain .search-list li a{
+    color:#ccc;
+}
+#search-contain .search-list li.red a{
+    color:#f00;
+}
+#main-menu{
+    margin-left:360px;
+    height: 30px;
+}
+#main-menu img{
+    width: 100px;
+    float: left;
+    margin-right:20px;
+}
+#main-menu ul{
+    float: left;
+    margin-top: 4px;
+}
+#main-menu li{
+    float: left;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: 100;
+}
+#banner{
+    position: relative;
+    border-top: 2px solid #f00;
+}
+#banner .banner-img li a{
+    display: block;
+    width: 1230px;
+    margin: 0 auto;
+}
+#banner li a img{
+    width: 100%;
+}
+#banner .nav{
+    position: absolute;
+    background: rgba(0,0,0,.5) ;
+}
+#banner .nav > li{
+    width: 200px;
+    height: 31px;
+    color: #fff;
+    line-height: 31px;
+}
+#banner .nav >li> a{
+    color: #fff;
+    font-weight: 100;
+    margin:0 10px;
+}
+#banner .nav li i{
+    margin:0 10px;
+}
+#banner .nav li.product{
+    background: #ff0000;
+    font-size: 16px;
+    margin-top: -30px;
+}
+#banner .nav li.product:hover {
+    background: #ff0000;
+    font-size: 16px;
+    margin-top: -30px;
+}
+#banner .nav li.product i{
+    font-size: 20px;
+}
+#banner .banner-img li{
+    background: #e8e8e8
+}
+#banner .nav li:hover {
+    background: #ffffff;
+}
+#banner .nav li.c1:hover ,#banner .nav li.c1:hover >a{
+    color: red;
+}
+#banner .nav li.c2:hover ,#banner .nav li.c2:hover >a{
+    color:blue;
+}
+#banner .nav li.c3:hover ,#banner .nav li.c3:hover >a{
+    color:fuchsia;
+}
+#banner .nav li:hover .banner-menu {
+    display: block;
+}
+#banner .banner-menu{
+    position:absolute;
+    top:0;
+    left:200px;
+    background: #ffffff;
+    width: 825px;
+    height: 500px;
+    float: left;
+    display:none;
+}
+#banner .banner-left > li{
+    margin: 10px 0;
+}
+#banner .banner-menu .banner-menu-list{
+    width: 643px;
+}
+#banner .banner-menu .banner-menu-head{
+    float: left;
+}
+#banner .banner-menu .banner-menu-head a{
+    font-size: 20px;
+    margin: 0 20px;
+}
+#banner .banner-menu .banner-menu-list{
+    width: 493px;
+    float:left;
+    line-height: 20px;
+    margin-top: 2px;
+    padding-bottom:5px;
+    border-bottom: 1px dashed #ccc;
+}
+#banner .banner-menu-list li{
+    float:left;
+    margin-left: 10px;
+}
+#banner .banner-right {
+    width: 190px;
+    float: left;
+}
+#banner .banner-right img{
+    width: 88px;
+    float: left;
+}
+#brand .brand-stye-1{
+    width: 234px;
+}
+#brand .brand-stye-2{
+    width: 258px;
+}
+
+
+
+
+
+
+
+
+
