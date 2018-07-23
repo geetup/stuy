@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+     *{
+         margin:0;
+         padding:0;
+     }
+     li{
+         list-style: none;
+      }
+     a{
+         text-decoration: none;
+     }
+    #menu{
+        width: 200px;
+        margin: 100px auto;
+        border: 1px solid #000000;
+    }
+    #menu a{
+        display: block;
+        width: 100%;
+        background: #000;
+        color: #ffffff;
+
+    }
+    #menu>li{
+        text-align:center ;
+    }
+     #menu .sub-menu{
+         display: none;
+     }
+    #menu .sub-menu li{
+        height: 22px;
+        text-align: center ;
+        line-height: 22px;
+    }
+
+</style>
+<ul id="menu" >
+    <li>
+        <a href="">管理层</a>
+       <ul class="sub-menu" >
+           <li>001</li>
+           <li>002</li>
+           <li>003</li>
+       </ul>
+    </li>
+    <li>
+        <a href="">交流层</a>
+        <ul  class="sub-menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var aA = document.getElementsByTagName ('a');
+    var aSubMenu = document .getElementsByClassName ('sub-menu');
+     for(var i=0;i<aA.length;i++){
+        aA[i].xx=i;
+         aA[i].onclick = function(){
+             if(aSubMenu[this.xx].style.display =='block'){
+                 aSubMenu[this.xx].style.display ='none';
+             }else{
+                 aSubMenu[this.xx].style.display ='block';
+             }
+             return false;
+         }
+
+     }
+//      function getStyle(elem,prop){
+    //   if(elem,currrentStyle){
+    // {return elem.currrentStyle[prop];
+    //  }else{
+    //     return getComputedStyle(elem,false)[prop]
+    // }
+  //  }
+</script>
+</body>
+</html>
