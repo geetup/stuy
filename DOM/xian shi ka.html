@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #contain{
+            width: 400px;
+            margin: 100px auto;
+        }
+        #contain ul{
+            height: 30px;
+        }
+        #contain li{
+            float: left;
+            height: 30px;
+            width: 120px;
+            text-align: center;
+            line-height: 30px;
+            background: #cccccc;
+            margin-right: 10px;
+            color:#fff;
+        }
+        #contain div{
+            width: 400px;
+            height: 270px;
+            background: #ccc;
+            border-top: 1px solid #000;
+            position: absolute;
+            display: none;
+        }
+        #contain li.selected{
+            background: #000000;
+
+        }
+        #contain div.show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="contain">
+    <ul>
+        <li class="selected">1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+    <div class="show">aaaa</div>
+    <div>bbbb</div>
+    <div>cccc</div>
+</div>
+<script>
+    var aLi = document.getElementsByTagName('li');
+    var oContain = document.getElementById('contain');
+    var aDiv = oContain.getElementsByTagName('div');
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+            for(var j=0;j<aLi.length;j++){
+                aLi[j].className ='';
+                aDiv[j].className = '';
+            }
+            this.className = 'selected';
+            aDiv[this.index].className = 'show';
+        }
+    }
+
+
+</script>
+</body>
+</html>
