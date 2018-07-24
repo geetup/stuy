@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+         *{
+             margin: 0;
+             padding:0;
+         }
+         li{
+             list-style: none ;
+         }
+         #container {
+             width: 520px;
+             height: 280px;
+             margin: 100px auto;
+             position: relative;
+         }
+         #container .imgs img{
+             position: absolute;
+             display: none;
+         }
+         #container .imgs .selected{
+             display: block;
+         }
+         #container ul.nav{
+            position:absolute;
+             right: 10px;
+             bottom:10px;
+         }
+         #container .arrows{
+             position: absolute;
+             left: 10px;
+             bottom: 10px;
+         }
+        #container .nav li,.arrows span{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: #fff;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 20px;
+        }
+         #container li.selected{
+             background:orange;
+         }
+</style>
+<div  id="container">
+    <div class="imgs">
+        <img  class="selected" src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+    </div>
+    <ul class="nav" >
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+     <div class="arrows">
+         <span id="prev"> <</span>
+         <span id="next"> ></span>
+     </div>
+</div>
+<script>
+    var aLi = document .getElementsByTagName('li');
+    var aImg = document.getElementsByTagName ('img');
+    var oContainer = document .getElementById('container');
+    var oPrev = document .getElementById('prev');
+    var oNext = document .getElementById('next');
+    var nowIndex=0;
+       for(var i=0;i<aLi.length ;i++){
+           aLi[i].index = i;
+           aLi[i].onmouseout  = function(){
+               nowindex =this.index;
+               changeImg(this.index);
+           }
+       }
+            oNext.onclick = function () {
+                nowIndex++;
+                if(nowIndex == aLi.length ){
+                    nowIndex=0;
+                }
+                changeImg(nowIndex);
+            }
+                oPrev.onclick = function () {
+                    nowIndex--;
+                if(nowIndex== -1 ){
+                    nowIndex=aLi.length - 1;
+                }
+                    changeImg(nowIndex);
+            }
+                function changeImg(index){
+                    for(var j=0;j<aLi.length;j++){
+                        aLi[j].className = '';
+                        aImg[j].className = '';
+                    }
+                    aImg[index].className = 'selected';
+                    aLi[index].className = 'selected';
+                }
+
+                oContainer.onmouseover = function () {
+                    clearInterval (timer);
+                 }
+                 oContainer.onmouseout = function (){
+                     play();
+                 }
+                    play();
+
+                 function play(){
+                  timer = setInterval (function (){
+                            oNext.onclick();
+                  },1000);
+                 }
+</script>
+</body>
+</html>
