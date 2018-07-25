@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    div{
+        width: 300px;
+        height: 200px;
+        background:red;
+        opacity: 1;               //透明度0-1//
+    }
+</style>
+<div id="div1">
+
+</div>
+<script>
+       var oDiv = document.getElementById ('div1');
+       var timer = setInterval (function(){
+           var o = getComputedStyle (oDiv,false).opacity;//获取上面的透明度//同时获取内联样式//
+           var  w = getComputedStyle (oDiv,false).width;  //获取上面的宽度//
+
+           w = parseInt (w)+10;                               //整形：将字符串转换为整数//
+           console.log(w);
+           if(w >=500){
+               oDiv.style.width='500px';
+               clearInterval(timer);
+           }else{
+               oDiv.style.width= w +'px';
+           }
+
+
+
+
+       },50)
+
+</script>
+</body>
+</html>

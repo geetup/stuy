@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    #container{
+        width: 330px;
+        height: 200px;
+        border: 2px solid #000000;
+        margin: 100px 200px ;
+        position: relative;
+        overflow: hidden;
+    }
+    #container ul {
+        width: 880px;
+        position: relative;
+    }
+
+    #container .bt li{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: #000;
+        color: #f7f7f7;
+        font-size: 40px;
+        text-align: center ;
+        line-height: 100px;
+        margin-right: 10px ;
+    }
+    #container .arrows {
+        position: absolute;
+        bottom:20px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+   #container .arrows span{
+       background: #ccc;
+       padding: 10px;
+    }
+
+</style>
+<div id="container">
+ <ul class="bt">
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+     <li>4</li>
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+     <li>4</li>
+ </ul>
+    <div class="arrows">
+        <span id="left">左</span>
+        <span id="right">右</span>
+    </div>
+</div>
+<script>
+    var oBt = document .getElementsByClassName ('bt');
+    var oLeft = document .getElementById('left');
+    var  oRight = document.getElementById ('right');
+    var speed = -2
+            setInterval (function(){
+           var ileft = oBt[0].offsetLeft ;
+          oBt[0].style.left = ileft + speed + 'px';
+          if(ileft< -oBt[0].offsetWidth/2){
+              oBt[0].style.left = 0 ;
+          }
+           if(ileft>0){
+              oBt[0].style.left = -oBt[0].offsetWidth/2+'px';
+
+           }
+           },0.01);
+            oLeft .onmousemove = function () {
+                         speed = + 2 ;
+           }
+            oRight .onmousemove = function () {
+                      speed = -2 ;
+            }
+</script>
+</body>
+</html>
