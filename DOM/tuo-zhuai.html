@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background: #0086b3;
+        position: absolute;
+
+    }
+</style>
+<div id="move">别点我</div>
+<script>
+        var oMove = document .getElementById('move');
+        oMove.onmousedown = function (e) {
+            var ileft = e.clientX -this.offsetLeft ;
+            var itop  = e.clientY - this.offsetTop;
+          document .onmousemove =function (e) {
+                hLeft= e.clientX -ileft;
+                hTop  = e.clientY -itop;
+
+                if (hLeft >document .documentElement .offsetWidth -oMove .offsetWidth ){
+                    hLeft = document .documentElement .offsetWidth -oMove .offsetWidth
+                }else if(hLeft <0){
+                    hLeft = 0;
+                }
+
+              if(hTop > window.innerHeight - oMove.offsetHeight){
+                  hTop = window.innerHeight - oMove.offsetHeight;
+              }else if(hTop < 0){
+                  hTop  = 0;
+              }
+
+
+                oMove .style.left=hLeft +'px';
+                oMove .style.top = hTop +'px';
+
+
+            }
+            oMove .onmouseup = function(){
+                document .onmousemove =null;
+            }
+        }
+</script>
+</body>
+</html>
