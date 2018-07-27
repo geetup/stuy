@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">1111
+    <div id="div2">22222
+        <div id="div3">
+           33333
+        </div>
+    </div>
+</div>
+<script>
+    var div1 = document .getElementById ('div1');
+    var div2 = document .getElementById ('div2');
+    var div3 = document .getElementById ('div3');
+  //  1
+   //      div1 .onclick = function () {
+    //         console.log(111111)
+    //     }
+     //   div2 .onclick = function () {
+    //        console.log(2222222)
+    //    }
+    //   div3 .onclick = function () {
+    //        console.log(33333333)
+     //       e.cancelBubble = true;
+      //      e.stopPropagation();
+     //   }
+    //     是一个冒泡的现象，从内到外的执行事件
+    //      输出的前面可以加下面的属性就可以阻止事件的冒泡，
+    //     e.cancelBubble = true;
+    //      e.stopPropagation();
+
+
+    //2
+            div1 .addEventListener('onclick',function () {
+                console .log('冒泡div1' );
+            },false );
+            div2.addEventListener('onclick',function () {
+                console .log('冒泡div2' );
+            },false );
+            div3 .addEventListener('onclick',function () {
+                console .log('冒泡div3' );
+            },false );
+            div1 .addEventListener('onclick',function () {
+                console .log('捕获div1' );
+            },true );
+            div2 .addEventListener('onclick',function () {
+                console .log('捕获div2' );
+            },true );
+            div3 .addEventListener('onclick',function () {
+                console .log('捕获div3' );
+            },true );
+
+      //      按照W3C标准，是先捕获后冒泡
+      //      先是非目标元素的捕获  到 目标元素冒泡 到 目标元素捕获 到 目标元素的冒泡：
+
+</script>
+</body>
+</html>

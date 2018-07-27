@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>11111</li>
+    <li>22222</li>
+    <li>33333</li>
+</ul>
+<button id="add" >添加</button>
+<script>
+    var aLi = document .getElementsByTagName ('li');
+    var oBtn = document .getElementById ('add');
+    var oUl = document .getElementById ('ul1');
+
+       oUl .onclick  = function (e) {
+           console.log(e.target.innerHTML );                      //是当前的li的，而currentTarget是相对于ul的，不同于与前者
+           console.log(e.currentTarget.innerHTML);
+           e.stopPropagation();                                   //停止冒泡
+       }
+       oBtn .onclick  = function () {
+             var oLi = document .createElement ('li');                   //加一个子元素：createElement
+             oLi .innerHTML =Math .random ();                            //随机数0到1的随机小数
+             oUl .appendChild (oLi );                                    //将元素加入组中
+       }
+</script>
+</body>
+</html>
