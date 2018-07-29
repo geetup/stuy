@@ -13,7 +13,7 @@
             #menu{
                 width: 400px;
                 height: 300px;
-                background: dimgray;
+                background:white;
                 margin: 250px 200px;
                 position:relative;
             }
@@ -29,6 +29,12 @@
                 width: 200px;
                 background: green;
             }
+           #menu li.first {
+                background: #cccccc;
+            }
+            .selected .first{
+                background: #bbbbbb;
+            }
             #menu .contain img{
                 position: absolute;
                 margin-left:200px;
@@ -40,45 +46,71 @@
             }
 
            #menu .text1 {
-               width: 200px;
-               height: 67px;
-               background: #f7f7f7;
-                position: absolute;
-               margin-left: 40px;
-               padding-left: 40px;
-           }
+               width: 147px;
+               height: 74px;
+               background:white;
+               position: absolute;
+               margin-left: 0;
+               padding-left: 54px;
+               margin-top: 86px;
 
-            div.rl img{
+            }
+
+            div .text1  img{
                 height:23px;
                 width:23px;
-                margin-top:83px;
+                margin-top:0;
+                position: relative;
+                margin-left: -46px;
+                margin-bottom: -30px;
             }
-            div.r2{
+           img#piao{
+               display: none;
+            }
+            .text1 .r2{
                 color: #63a35c;
+                display:none;
+            }
+            .text1.r1{
+                display: block;
             }
 </style>
 <div id="menu">
     <ul class="selected">
         <li>今日疯抢</li>
-        <li>量贩装</li>
+        <li class="first ">量贩装</li>
     </ul>
-    <div class="rl">
-        <img src="../images/rl.png" >
-    </div>
     <div class="contain">
         <img src="../images/zhi.jpg" height="200" width="200"/>
-        <img src="../images/xiyiye.jpg" height="200" width="200"/>
+        <img id="piao"  src="../images/xiyiye.jpg" height="200" width="200"/>
     </div>
     <div class="text1">
 
-        <div class="r2"><spsan>蓝月亮洗衣液</spsan></div>
-        <div><spsan>限时抢半价</spsan></div>
+        <div class="r1"><spsan >蓝月亮洗衣液</spsan></div>
+        <div class="r1"><spsan>限时抢半价</spsan></div>
     </div>
     <div class="text1">
-
-        <div class="r2"><spsan>限时限量疯抢</spsan></div>
-        <div><spsan>一元超值疯抢中</spsan></div>
+        <img src="../images/rl.png" >
+        <div id="end"  class="r2"><spsan>限时限量疯抢</spsan></div>
+        <div class="r2"><spsan>一元超值疯抢中</spsan></div>
     </div>
 </div>
+ <script>
+     var oLi = document .getElementsByClassName('selected');
+     var aContain = document .getElementsByClassName('contain');
+
+     for(var i=0;i<oLi.length;i++){
+         oLi[i].index = i;
+         oLi[i].onclick = function(){
+             for(var j=0;j<oLi.length;j++){
+                 oLi[j].className ='';
+                 aContain[j].className = '';
+             }
+             this.className = 'r1';
+             aDiv[this.index].className = 'show';
+         }
+     }
+
+ </script>
  </body>
 </html>

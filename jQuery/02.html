@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+<input type="text"  id="ipt">
+<ul>
+    <li>huashuo</li>
+    <li>huawei</li>
+    <li>iphone</li>
+    <li>xiaomi</li>
+    <li>oppo</li>
+</ul>
+<script>
+     $(function(){
+         $('#ipt').on('keyup'),function(){
+             var value =$(this).val();
+             $('li').css('background','');
+             if(value != ''){
+                 $('li:contains('+value +') ').css('background','red').css('list','none');
+             }
+         }
+     });
+</script>
+</body>
+</html>
