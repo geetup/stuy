@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格隔行变色</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    table{
+
+        margin: 100px auto ;
+
+    }
+    thead tr {
+        border: 1px solid  #000000;
+        display: block;
+
+
+    }
+    thead th{
+
+    }
+    tbody tr td{
+        border: 1px solid  #000000;
+        margin: 0;
+    }
+</style>
+<table>
+    <thead>
+    <tr><th>姓名</th></tr>
+    <tr><th>性别</th></tr>
+    <tr><th>暂住地</th></tr>
+    </thead>
+    <tobody>
+        <tr>
+            <td>张三</td>
+            <td>男</td>
+            <td>浙江宁波</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>男</td>
+            <td>则将杭州</td>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>娜</td>
+            <td>湖南</td>
+        </tr>
+        <tr>
+            <td>找刘</td>
+            <td>男</td>
+            <td>黑龙江</td>
+        </tr>
+        <tr>
+            <td>小七</td>
+            <td>娜</td>
+            <td>温州</td>
+        </tr>
+        <tr>
+            <td>老8</td>
+            <td>女</td>
+            <td>北京</td>
+        </tr>
+    </tobody>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('tbody tr:even ').css("background","red");
+            $('tbody tr:odd ').css("background","yellow")
+        })
+    </script>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    #div1{
+        width: 200px;
+        height: 200px;
+        background: #ff0000;
+    }
+</style>
+<button id="btn">显示</button>
+<button id="btn1">隐藏</button>
+
+<div id="div1">div</div>
+<script src = jquery-1.12.4.js></script>
+<script>
+           // var oDiv = document.getElementById ('div');
+           // var oDiv2 = document.getElementById ('div2');
+           //
+           // oDiv2 .appendChild(oDiv .cloneNode() );
+           // oDiv .xx='yy';
+           // oDiv .setAttribute ('xx','yy');
+            $('#btn').on('click',function(){
+                $('#div1 ').fadeIn();
+            })
+             $('#btn1').on('click')
+</script>
+</body>
+</html>

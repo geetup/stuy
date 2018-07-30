@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+    }
+    .focus{
+        border: 1px solid red;
+        background: #fcc ;
+    }
+</style>
+<form action="" id="oForom">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="usename">名称</label>
+            <input id="usename"type="" value="名称">
+              <br/>
+            <br/>
+            <label for="pass">密码</label>
+            <input id="pass" type="" value="密码">
+            <br/>
+            <br/>
+            <label for="infortion">详细信息</label>
+            <textarea id="infortion"  rows="2" rols="20" >详细信息</textarea>
+        </div>
+    </fieldset>
+</form>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+         $(':input').focus (function(){
+             $(this).addClass ('focus');
+             if($(this).val()==this.defaultValue){
+                       this.value='';
+             }
+         }).blur (function(){
+             $(this).removeClass ('focus').val(this.value==""?this.defaultValue:this.value);
+         })
+    })
+</script>
+</body>
+</html>

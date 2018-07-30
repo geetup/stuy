@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table>
+    <thead>
+    <tr><th> </th><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <input type="radio" name="choice" value=""/>
+        </td>
+        <td>张山</td>
+        <td> 男 </td>
+        <td>浙江宁波</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="choice" value="" />
+        </td>
+        <td>李四</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="choice" value="" checked='checked' />
+        </td>
+        <td>王五</td>
+        <td>男</td>
+        <td>湖南长沙</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="choice" value="" />
+        </td>
+        <td>找六</td>
+        <td>男</td>
+        <td>浙江温州</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="choice" value="" />
+        </td>
+        <td>Rain</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="radio" name="choice" value="" />
+        </td>
+        <td>MAXMAN</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    </tbody>
+</table>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    // $(function(){
+    //     // $('tbody>tr').on('click',function(){
+    //     //     $(this).addClass ('selected');//为每个匹配元素添加一个样式
+    //     //     $(this).siblings ().removeClass('selected').end();//获得匹配元素集合中每个元素的兄弟元素,可以提供一个可选的选择器。。
+    //     //     $(this).find(':radio').attr('checked',true);//radio选择所类型为单选的元素
+    //     // });
+    //     //简化
+    //     //$('table:radio:checked').parents("tr").addCalss('selected');
+    //     //表格下面的：所有单选选择器：所有的打对号//选择父元素的下面的tr/所有匹配元素添加样式为（'selected'）
+    // })
+    $(function () {
+        $('tbody>tr').on('click',function(){
+           if($(this).hasClass ('selected')){
+               $(this)
+                   .removeClass('selected')
+                   .find(':checkbox').attr('checked',false);
+           }else{
+               $(this)
+                   .addClass('selected')
+                   .find(':checkbox').attr('checked',true);
+           }
+        })
+
+
+    })
+</script>
+</body>
+</html>
