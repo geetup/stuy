@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            font-size: 18px;
+        }
+        #div1 {
+            font-size: 20px;
+        }
+        #div2 {
+
+            width: 2em;
+            height: 2em;
+            background: #000;
+        }
+    </style>
+<div id="div1">
+    <div id="div2">
+
+    </div>
+</div>
+
+<script>
+
+    document.div1.onresize = function(){
+        var w = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = w/5 +'px';
+//        console.log(Math.random());
+
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

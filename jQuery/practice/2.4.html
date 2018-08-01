@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body{
+        font-size:16px;
+    }
+    table{
+        border:1px solid #000000;
+        border-collapse:collapse;
+        /*表格之间的间距处理，没有分隔*/
+        width: 400px;
+    }
+    thead th{
+        width: 400px;
+    }
+    table th,td{
+        width: 50%;
+        border: 1px solid #000000;
+        height: 30px;
+    }
+    tbody th{
+        background-color:#abc;
+    }
+</style>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">鼠标点击表格就可以编辑</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="editable">张三</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="editable">李四</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="editable">王二麻子</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="editable">燕小六</td>
+            </tr>
+        </tbody>
+    </table>
+<script src="../jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        $('tbody tr:even').css("background-color","blue");
+        var $eDitTd = $('td.editable');
+        $eDitTd.on('click',function(){
+        var $tdObj = $(this);//获取点击的事件
+        var $inputOdj = $("<input type=\"text\">");//创建一个文本对象
+            $inputOdj.width('width',width());//将文本框的宽度与td的一致
+            $inputOdj.css('border','none').css('background-color','blue');
+            if($(this).children ("input[type='text']").size()){
+                return false;
+            }
+            $inputOdj.val($(this).text());
+            $(this).empty();
+            $(this).append($inputOdj);
+            $inputOdj.trigger("select");
+        });
+    });
+</script>
+</body>
+</html>

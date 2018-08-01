@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(){
+        this.name = '燕小六';
+    }
+    Person.prototype .say = function () {
+        console.log(this.name);
+    };
+
+
+    function Son(n){        //继承上面的东西
+        this.name = n;   //n为参数，传参
+    }
+    Son.prototype  = new Person ();
+
+    var s = new Son('666') ;
+    s.say();
+
+    var s1 = new Person('7777')
+    s1 .say();
+</script>
+</body>
+</html>
