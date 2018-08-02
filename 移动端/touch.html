@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+    }
+    html,body{
+        height: 100%;
+    }
+#big-img {
+    height: 100%;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #000;
+    background-position: center;
+    height: 100%;
+}
+    #container img{
+        width: 430px;
+        height: 111px;
+        float:left;
+        width: 25%;
+        box-sizing: border-box;
+        border-bottom: 4px solid #000;
+        border-right: 4px solid #000;
+    }
+
+</style>
+<div id="container" >
+
+
+<div id="big-img" >
+
+</div>
+<script src="zepto.js"></script>
+<script src="touch.js"></script>
+<!--顺序不能错，-->
+<script>
+    $(function () {
+      var str = '';
+      for(var i=0;i<24;i++){
+          str += '<img src="img/'+(i+1)+'.jpg"/>';
+      }
+      $('#container').append(str);
+    })
+    $('#container').on('tap','img',function(){
+        $('#container').hide();
+        $('#big-img').show();
+    })
+</script>
+</body>
+</html>

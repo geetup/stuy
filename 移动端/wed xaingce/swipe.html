@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>手机滑动效果</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border: none;
+    }
+    html,body{
+        height: 100%;
+    }
+    #container img{
+        float: left;
+        width: 25%;
+        box-sizing: border-box;
+        border-bottom: 4px solid #000;
+        border-right: 4px solid #000;
+    }
+    #big-img{
+        display: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #000;
+        background-position: center;
+        /*position: absolute;*/
+        /*top:0;*/
+        /*bottom:0;*/
+        /*left:0;*/
+        /*right: 0;*/
+        height: 100%;
+    }
+</style>
+<div id="container">
+
+</div>
+<div id="big-img" >
+
+</div>
+<script src="../zepto.js"></script>
+<script src="../touch.js"></script>
+<script>
+    $(function(){
+        var str ='';
+        var iNwo= 0;
+        for(var i=0;i<24;i++){
+            str += '<img src="img/thumbs/'+(i+1)+'.jpg">';
+        }
+        $('#container').append(str);
+        $('#container ').on('tap','img',function(){
+            $('#container ').hide();
+            $('#big-img').css('background-image','url(img/'+($(this).index()+1)+'.jpg)')
+                .show();
+        });
+        $('#big-img ').on('tap',function(){
+            $('#container').show();
+            $('#big-img').hide();
+            iNwo ++
+        }).on('swipeLeft',function(){
+            if(iNwo==24){
+                iNwo=0;
+            }
+            $('#big-img').css('background-image','url(img/'+(iNow+1)+'.jpg)');
+        }).on('swipeRight',function(){
+            iNow--;
+            if(iNow == -1){
+                iNow=23;
+            }
+            $('#big-img').css('background-image','url(img/'+(iNow+1)+'.jpg)');
+        })
+        })
+</script>
+</body>
+</html>

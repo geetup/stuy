@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // class User {
+    //     constructor() {
+    //         this.xx = n;
+    //     }
+    //
+    //     static say(a,b,c,d){
+    //    return a*b/c+d;
+    // }
+    // }
+    // var result = User.say(1,2,3,4);
+    // console.log(result);
+
+
+
+    function User (){
+        this.name = 'zs';
+    }
+    User.prototype .say = function(){
+        console.log()
+    };
+       function Son(n){
+        this.name = n;
+       }
+
+       Son .prototype = new User();
+    var s = new Son('lisi');
+    s.say ();
+
+
+
+</script>
+</body>
+</html>
