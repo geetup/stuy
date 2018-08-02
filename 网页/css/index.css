@@ -1,0 +1,49 @@
+#header{
+    width: 1880px;
+    height: 105px;
+    background:#e8e8e8;
+}
+#header .logo img{
+    margin-top:16px;
+    position: absolute;
+}
+#header .logo input{
+    margin-top:45px;
+    position: relative;
+    width: 200px;
+    height:25px;
+    margin-left: 202px;
+    font-size: 13px;
+    color: #999999;
+    border: 1px solid #000000;
+}
+.p-color ul{
+    height: 20px;
+    width: 110px;
+    display: block;
+    position: relative;
+    color: #0086b3;
+    margin-left: 780px;
+    margin-top: -70px;
+}
+.p-color ul li{
+    float:left;
+    background: #a71d5d;
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    line-height: 20px;
+    text-align: center;
+}
+.o-menu ul{
+    display: block;
+    width: 990px;
+    height: 37px;
+
+  }
+.o-menu ul li{
+    float: left;
+    width: 50px;
+    height: 37px;
+
+}

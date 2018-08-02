@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.wrapper{
+    width: 1230px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+    color:#000;
+}
+li{
+    list-style: none;
+}
+

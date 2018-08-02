@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+    }
+    #div1{
+        width: 100%;
+        padding-bottom: 100%;
+        background: #000;
+        /*pading是将整个元素撑起来的，而本身没有高*/
+    }
+    #div2{
+        width: 100vw;
+        height: 100vw;
+        /*1vw是一个视角的宽的百分比
+        1vh是一个视角的高的百分比*/
+        background: #0086b3;
+    }
+    #div3{
+        width: 100%;
+        background: #FF6500;
+        overflow: hidden;
+    }
+    #div3:after{
+        content: '';
+        display: block;
+        margin-top: 100%;
+    }
+    /*是子元素的撑起来的的，子元素是一个伪类，用marin*/
+</style>
+<div id="div1" >
+    
+</div>
+<div id="div2" >
+
+</div>
+<div id="div3" >
+
+</div>
+</body>
+</html>
