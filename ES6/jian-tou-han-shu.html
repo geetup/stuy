@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+</ul>
+<script>
+    // <!--箭头函数-->
+    //1没有构造函数，2没有arguments[0]，3具有具有指向性，  例子1
+    //
+    //       例子1
+var aLi = document .getElementsByTagName ('li');
+   for(var i=0;i<li.length ;i++){
+       ali[i].onclick = function(){
+           setTimeout (()=>{
+               console.log(this.innerHTML )
+           },1000)
+       }
+   }
+    //箭头函数里面的this是定义时指向
+    //普通函数里面的this是运行时指向
+//也可以当作没有this，箭头函数自己没有，网上面找就相当于在，console.log(.innerHTML )
+//    就要到li中找。就属于li。
+    例子2
+       var obj = {
+           name:'zs',
+           age:12,
+           say:()=>{                           obj .say(function(){
+               console.log(this.age);           console.log(this.age);
+           }                                    });
+       };
+
+
+
+
+       var fn = ()=>{
+           console.log(arguments[0]);
+
+       };
+       fn(1);
+-------------------------------------------------------------------------------------------------
+
+    var fn = () => {
+           console.log('1,2,3,3,5,8,6,5,2');
+       }
+       fn(l);
+
+       function fn() {
+           console.log(arguments[0]);
+       }
+
+</script>
+</body>
+</html>

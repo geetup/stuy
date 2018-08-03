@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var m = new Map();
+    m.set('a',1222);
+    m.set(1,'23235');
+    m.set(true ,'xxxx');
+    m.set(undefined,'xxx' );
+    m.set(null,'xx');
+    m.set(NaN,'vvv');
+    var arr = [1,2];
+    var obj = {};
+    m.set(arr,'yy');
+    m.set(obj,'yy');
+    m.set(1,'123');
+    //清除单个与所有
+    m.delete ('a');
+    m.clear ();
+    //可以又几乎全部的类型，
+</script>
+</body>
+</html>
