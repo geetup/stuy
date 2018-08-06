@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    // //回掉嵌套callback cell  有名地狱嵌套
+    // $.get('a.json',function(d1){
+    //     console.log(d1.a);
+    //     var t = d1.teacher;
+    //     $.get('b.json',{name:t},function(d2){
+    //         console.log(d2.b);
+    //         $.get('c.json',{name:t},function(d3){
+    //             console.log(d3.c);
+    //         });
+//     //     });
+//     // });
+// var f1 = function(){
+//     var p = new Promise(function(resolve,reject){
+//         setTimeout (function(){
+//             resolve (1111111)
+//         },1000)
+//     });
+//     return p ;
+// }
+//
+// var f2 = function(){
+//     var p = new Promise(function(resolve,reject){
+//         setTimeout (function(){
+//             resolve (1111111)
+//         },1000)
+//     });
+//     return p ;
+// }
+    setTimeout (function(){
+       console.log('666666')
+    },1000);
+    console.log('999999');
+
+        var p = new Promise (function(resolve,reject ){
+    setTimeout(function(){
+        console.log(1111);
+       resolve (222222);//成功状态
+        // resolve();失败状态
+    },1000);
+            console.log(33333)
+});
+        p.then(function(d){
+            //成功执行
+            console.log(d);
+            return new Promise (function(s,r){//then方法是最慢的最后执行
+                setTimeout (function(){
+                  console.log(88888);
+                  s(55555555);
+                },1000);
+            })
+        //     return Promise .resolve ('yes')
+        // },function(d){
+        //     //失败执行
+        }).then(function(s) {//then方法是最慢的最后执行
+            console.log(s);
+        });
+        console.log(7777)
+        // }).catch (function(){
+        //     console.log(NO);
+        // })
+</script>
+</body>
+</html>
