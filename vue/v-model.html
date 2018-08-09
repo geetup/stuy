@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" >
+    <input type="text"@keyup.space="fun"v-model="val">
+    {{msg}}
+</div>
+<script src="vue.js "></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:0,
+            val:''
+        },
+        methods:{
+              fun(){
+                  // console.log(this.val);
+                  // if(event.keyCode == 13){
+                  this.msg += this.val * 1;
+              }
+        }
+    })
+</script>
+</body>
+</html>
