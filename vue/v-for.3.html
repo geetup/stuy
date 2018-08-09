@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" >
+    <ul>
+        <!--<li v-for="(i,val) in arr">-->
+            <!--{{val}},{{i}}-->
+        <!--</li>-->
+        <!--<li v-for="i in 3">&lt;!&ndash;3表示循环几次&ndash;&gt;-->
+          <!--{{arr}},{{i}}-->
+        <!--</li>-->
+        <li v-for="(val,index) in sortstuList">
+            学生姓名是：{{val.name}},年龄是：{{val.age}},{{index}}
+        </li>
+        <!--<li v-for="(val,key,index) in obj">&lt;!&ndash;val值 key键 index索引&ndash;&gt;-->
+            <!--{{index}},{{val}},{{key}}&lt;!&ndash;显示的循序&ndash;&gt;-->
+        <!--</li>-->
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world',
+            arr:[111,222,33,444],
+            stuList:[{
+                    name:'zs',
+                    age:12
+                },
+                {
+                    name:'lisan',
+                    age:48
+                },
+                {
+                    name:'lksjdas',
+                    age:13
+                }],
+            obj:{
+                a: 1,
+                a: 1,
+                a: 1,
+            }
+        },
+        computed:{
+            sortstuList(){
+                // console.log(this);
+                return this.stuList.sort(function(a,b){
+                    return a.age-b.age;
+                });
+            }
+        }
+
+    })
+</script>
+</body>
+</html>
+<!--in  arr  是关键字-->
+<!--数据要不是在指令里面，就是放在{{}}}-->
+
+<!--（val ,index）in  arr 里面索引放在后面{{}}{{index}}-->

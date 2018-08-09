@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" v-text="msg" >  <!--指令v-text=""-->
+    <!--{{必须是两个大括号}}-->
+    <!--{{msg}}-->
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue ({
+        el:'#app',
+        data:{
+            msg:'zhun bei xue xi'
+        }
+    })
+</script>
+</body>
+</html>
