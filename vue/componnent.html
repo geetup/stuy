@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app" >
+    {{msg}}
+    <xxx xx="1654" x-x="31156" y-y="15646" >
+        <p slot="p1">即使这样</p>
+    </xxx>
+    <xxx :aa="m1"></xxx>
+    <demo></demo>
+</div>
+<script type="text/x-template" id="spp" >
+    <div>
+        <slot>
+            <p name="p1">dddddd</p>
+        </slot>
+    </div>
+</script>
+<script src="vue.js "></script>
+<script>
+   Vue.component('demo',{
+       template:" <h1>全局组件</h1> "
+   });
+    new Vue({
+        el:'#app',
+        data:{
+            msg:"sdddddd",
+            m1:"太难啦"
+        },
+        components:{
+            xxx:{
+                template:"<div>{{xx}},{{xX}},{{YY}},{{aa}}传值位置</div>" ,//传值
+                props:['xx','xX','YY','aa']//接受值
+            }
+        },
+
+    });
+</script>
+</body>
+</html>

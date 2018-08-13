@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dialog-box{
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            background: #ccc;
+        }
+        .dialog-title{
+            height: 40px;
+            background: pink;
+            line-height: 40px;
+        }
+        .close{
+            float: right;
+            line-height: 40px;
+
+        }
+        .content{
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="app" >
+    <button @click="login">登陆</button>
+    <button @click="reg">注册</button>
+    <my-dialog title="登陆" v-show="isLoginShow" @fclose="close">
+        账号：<input type="text">
+        <br>
+        密码：<input type="text">
+    </my-dialog>
+    <my-dialog title="注册" v-show="isRegShow" @fclose="close">
+        账号：<input type="text">
+        <br>
+        密码：<input type="text">
+        <br>
+        邮箱：<input type="text">
+        <input type="submit"><input type="reset">
+        <!--样式重置，重置input里面的内容-->
+    </my-dialog>
+</div>
+
+<script type="text/x-template" id="my-dialog">
+    <div id="dialog-box">
+        <div class="dialog-title">
+            <span class="title-name">{{title}}</span>
+            <span class="close" @click="$emit('fclose')">[X]</span>
+        </div>
+        <div class="content">
+            <slot>
+                账号：<input type="text">
+                <br>
+                密码：<input type="text">
+            </slot>
+        </div>
+    </div>
+</script>
+<script src="vue.js "></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            isLoginShow:false,
+            isRedShow:false
+        },
+        methods:{
+            login(){
+                this.isLoginShow=true;
+                this.isRegShow = false;
+            },
+            reg(){
+                this.isRegShow=true;
+                this.isLoginShow = false;
+            },
+            close(a,b){
+                this.isRegShow = false;
+                this.isLoginShow = false;
+            }
+        },
+        components:{
+            "my-dialog":{//冒号里面的不能有空格，只能有内容，要会出现未定义的报错
+                template:'#my-dialog',
+                props:['title']
+            }
+        }
+    })
+</script>
+</div>
+</body>
+</html>
