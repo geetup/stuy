@@ -1,5 +1,11 @@
 {
   "musicData": [{
+    "title": "逝去的爱",
+    "author": "李安",
+    "src": "http://www.ytmp3.cn/down/32510.mp3",
+    "musicImgSrc": "http://omratag7g.bkt.clouddn.com/%E6%88%91%E8%A6%81%E4%BD%A0.jpg",
+    "lrc": "lrc/我要你.lrc"
+  }, {
     "title": "我要你",
     "author": "老狼",
     "src": "http://up.mcyt.net/down/43422.mp3",

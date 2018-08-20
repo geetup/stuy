@@ -1,7 +1,8 @@
 <template>
     <div class="movie">
  <ul>
-     <movieList v-for="movie in movieList " :movie="movie" @click.native="Movieid"></movieList>
+     <!--主键的事件需要加native-->
+     <movieList v-for="movie in movieList " :movie="movie" @click.native="getmovieid"></movieList>
  </ul>
         <div class="loading" v-show="isShow">
             <img src="../../assets/img/loading.gif" alt="">
@@ -18,7 +19,7 @@
     export default {
         data() {
             return {
-                movieList: [],
+                movieList: [],//默认值
                 isShow: false,
                 isEnd:false
             }
@@ -42,20 +43,20 @@
                 }
             }
         },
+        /*封存的函数*/
         methods: {
             getData()
-            {
-                Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start=' + this.movieList.length + '&count=5')
-                    .then((res) => {
-                        this.movieList = [...this.movieList, ...res.data.subjects];
-                        this.isShow = false;
-                        if (res.data.subjects.length < 5) {
+            { Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters?start=' + this.movieList.length + '&count=5')
+              .then((res) => {
+                 this.movieList = [...this.movieList, ...res.data.subjects];
+                   this.isShow = false;
+                    if (res.data.subjects.length < 5) {
                             this.isEnd = true;
-                        }
+                     }
                     });
 
             } ,
-            getMovieid(movie){
+            getmovieid(movie){
                 this.$router.push('/Movieid/'+movie.id);
             }
         },

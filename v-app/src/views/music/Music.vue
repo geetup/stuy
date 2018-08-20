@@ -1,6 +1,6 @@
 <template>
     <div class="music">
-       <aplayer autoplay :music="musicList[0]" :list="musicList" v-if="isShow">
+       <aplayer autoplay :showLrc="true" :music="musicList[0]" :list="musicList" v-if="isShow">
 
        </aplayer>
     </div>
@@ -19,7 +19,7 @@
         created(){
             Axios .get('/data/musicdata.json')
                 .then((res)=>{
-                    this.musicList = res.data.musicData;
+                   // this.musicList = res.data.musicData;
                     var data=res.data.musicData;
                     data.forEach ((elem)=>{
                         var obj = {};
@@ -27,7 +27,7 @@
                         obj.src = elem.src;
                         obj.artist = elem.author;
                         obj.pic = elem.musicImgSrc;
-                        obj.lrc = elem.lrc;
+                        obj.lrc =  'http://localhost:8080/'+elem.lrc;
                         this.musicList.push(obj);
                     });
                      this.isShow = true;
