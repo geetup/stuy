@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*<!--before 是整个div1内容的前面，但是还是属于div1-->*/
+        /*#div1::before{*/
+            /*content:"after";*/
+        /*}*/
+        /*#div1::before{*/
+            /*!*插入的是行距元素*!*/
+            /*content:"after";*/
+            /*background: red;*/
+            /*display:block;*/
+        /*}*/
+        #div1{
+            text-shadow:10px 10px 2px darkred;
+            /* 阴影 4 参数---水平长度的位移 垂直长度的位移 模糊程度(不能是负值)  阴影颜色*/
+            width: 200px;
+            border:1px  solid #000000;
+            /*超出都分...来显示*/
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            /*5参数  是整个元素的阴影*/
+            /*box-shadow: #FFF38F ;*/
+            background: #ff2736 ;
+            background: url(1.jpg) no-repeat ;
+            border: 20px solid rgba(0,0,0,.5);
+            /*背景圆点葱花哪里开始的*/
+            background-origin: content-box ;
+            /*裁剪：只保留内容部分*/
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+       contentcontenontentntentntentontentcontentontenttentontenntencontentcontentcontentcontent
+    </div>
+    <div id="div2" >
+
+    </div>
+</body>
+</html>
