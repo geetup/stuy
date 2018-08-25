@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kind</title>
+</head>
+<body>
+<script>
+    // var obj = {//对象直接量
+    //     name:'zhangsan',
+    //     age:20
+    // };
+    // var obj1 = new Object( );//实例化对象
+    // Obj.name = 'wangermazi';
+    // 具有相同属性和方法的对对象的集合，
+    // function Person( name ) {
+    //     this.name = name;
+    //     this.sayhello = function( ){
+    //         console.log( 'my name is '+ this.name);
+    //     }
+    // }
+    // var fn =  function( ){
+    //     console.log( 'my name is '+ this.name);
+    // };
+    function Person( name ) {
+        this.name = name;
+        // this.sayhello = fn;
+    }
+    //在
+    Person.prototype.sayhello = function(){
+      console.log( 'my name is' + this.name );
+    };
+    var person1 = new Person ('zhangsan');
+    person1.sayhello( );
+
+</script>
+</body>
+</html>
