@@ -1,0 +1,1247 @@
+html -  页面的内容
+
+css  -  页面的样式
+
+javascript - 页面的交互
+
+document
+
+行级元素a span img-- 水平排布,靠内容撑开的
+块级元素p h1~h6 table div ul ol li --垂直分布  宽充满整个父元素 能设置宽和高
+                        如果不设置高 高就是内容撑开的
+                       绝对定位   浮动   行变块       都可以设置宽和高在行级元素中
+                        z-index只有在定位才有效果
+
+               盒模型阴影     box-shadow:垂直 水平 模糊程度 放射距离  颜色
+               文本阴影     text-shadow: 垂直 水平 模糊程度 放射距离  颜色
+            {   overflow  溢出隐藏
+               text-overflow:ellipsis;  多出的三个点表示
+               white-space:ellipsis;
+               一起使用
+
+               }
+
+               transform:scale等比例缩放(垂直 水平 )
+                 transform:scale+x/y/z 轴
+                 transform：skew扭曲度数可以在x/y的轴操作
+               3D Transform:TranslateZ/X/Y( --PX)
+动态效果   1  Transform:TranslateZ/X/Y( --PX)
+              transition:  Transformv 时间 动的效果 延时
+
+              animation  xxx   时间  linear  延时
+           2  @keyframes xxxx{      }
+                  %0{         }
+                  100%{      }
+
+
+                  圆建立        border-radius:50%;
+                               border: 10px solid #000;
+                                z-index: 数值（0-1）;视觉的突出   z轴的外显化
+
+               background: rgba(255,255,255,.5);背景的虚化  但是不会影响文本内容（文本内容不会虚化）
+
+              检测  （输入的数值会与msg进行运算）
+                var msg =window.prompt("输入",'123' );
+                       console.log( msg *2);
+                       任意取值X-Y
+                       function fn(x,y){
+                         return Math.floor(Math.random() * (y - x + 1) + x);
+                          }
+                         console.log(fn(X,Y));
+
+
+
+                                    数组建立与添加
+
+                     var arr1 = [1,2,3,4,5,6,'a','b'];//数组直接量
+                          console.log(arr1[5]);
+                          for(var i=0;i<arr1.length;i++){
+                              console.log(arr1[i]);
+                          }
+                                    数组的添加
+                           var arr = [2,4,5,3];
+
+                              arr.push(6);
+                              arr.push(8);
+
+                                 ===表示对比类型与值
+                                 短路运算
+                                 或的逻辑运算 前面的真的 后边的不在运算直接输出
+                                 var  a=e ||woind
+
+                             任何string + unm = string (强制将数值变成字符串叫隐形的类型转换，可以强制的进行类型转换 1  c.string(）2   Nnmber(C)   )
+
+                             NaN : ont a numder  是如果一个进行转化的string没有数字，之后进行运算得出的是NaN
+
+                               alert是弹窗    &&是 与  ||是   或   ！是  非   三位逻辑运算符
+
+                                bool 的true 转化数值是1   bool的 fales转化完是0
+
+                                转化后字符串有内容为true  没有的空字符串为faler   转化为bool型的
+
+                                空字符串转化数字为0
+                                null空对象
+                                *乘号永远是将其他类型化为数值
+
+                                分支的if语句
+                                var bool = true
+                                var num = 条件
+                           1 种    if(){        2 种     if(){
+                                }                        }
+                                   eles{         eles if (){
+                                   }                          }
+                                                 eles if (){
+                                                         }
+
+                            三语言表达式  你想判断谁
+                            bool?   console.log(真的)：console.log(假)
+
+                            var  xx = bool?  1 : 2
+                            console.log(xxx)
+                            真的输出1  假的输出2
+
+                            var xx = 开始
+                            switch 1:
+                                 console,log();
+                                   break   是终止
+                                 switch 2:
+                                    console,log();
+                                    switch 3:
+                                      console,log();
+                               从开始进行执行  遇到终止就停止   default是默认值  如果前面的都没又找到就执行默认值下面的输出
+
+                              for(var i = 1 ; i<11;i++){
+                                     console.log(i)   此时输出的1-10在不同的行中
+
+                              }
+                                var str = ''
+                                for(var i = 1 ; i<11;i++){
+                                          str = str + i
+                                }
+                                      console.log{ str }   此时1-10在同一个行中
+
+                                            var = i = 0
+                                            while(i<5){
+                                             console.log(i)
+                                               i++
+                                            }        先判断后执行
+
+
+                                              var = i = 0
+                                        do{
+                                                console.long(i)
+                                                i++
+                                        }   while(i<5)   先执行后判断（最少执行一次）
+
+                         三角形的面积函数：
+                                      var a = window.prompt('输入宽')
+                                       var b = window.prompt('输入宽')
+                                       console.log(a*b/2)
+
+                        封装/函数调用：
+                                    function(fn){
+                                         （对执行体封装/函数功能 ）
+
+                                    }
+
+                                     fn(n);//函数的调用
+                                     fn(n);//函数的再次调用
+
+                      函数返回值：在哪里调用的，就在那里写返回值return,
+                            如：
+                            var fn = function(w,h){
+                                  return  w*h/2
+                            }
+                             var xx =  fn(3.4 )
+                             alert(xx)
+                           如果函数使用返回值，返回值之下面的代码就不会在进行运算
+
+                     函数作用域没问题：
+
+                      函数作用域（全局作用域 ）与局部作用域，
+
+
+                     数学对象;内置对象（Math/Date）
+                     1:     var x = Math.Max(3,4,7);最大值
+                               console.log(x)
+
+                      2:      var d = Date();
+                                 console.log( d.getFullYear())当前系统年份
+
+                       (X,Y)包括下，x.y的随机数：
+
+                               function fn(x,y){
+                                    return math.Floor( Math.random()*(x+y-1)+x)
+                               }
+
+                               console.log ( fn( ) )
+
+                     数组直接量：
+
+                               var arr = [1,2,3,4,5,6,'a','f','c'];
+                               console.log(arr);
+
+                   DOM:历史对象：
+                   js命名规范第一个单词小写，第二第单词首字母大写：驼峰式命名
+                          按钮：<buttion>返回</buttion>
+                        在按钮上把绑定链接
+                      name.onclick = function(){
+                            lcoation.herf= 'back.htkl';
+                      }
+                      https://github.com/geetup/study2/commit/3b36f98eb69a261e601501e836ec4d351cd46142
+                           herf设置和返回完整的url;
+                           pathname 返回网页端口；
+                           问号和后面参数当前页面历史；3b36f98eb69a261e601501e836ec4d351cd46142
+                           http:// 是协议;
+
+                      appcodename:返回浏览器代码名字：
+
+            折叠菜单（问题）： 1 通过style在中获取上面中得值，只能获取内联样式，不能够获取上面的style的值
+
+                             2  function getStyle(elem,prop){
+                                   if(elem,currrentStyle){
+                                 {return elem.currrentStyle[prop];
+                                  }else{
+                                     return getComputedStyle(elem,false)[prop]
+                                   }
+                                }
+                               saosle等比例缩放
+                               onover
+
+                              布局要给父元素定位，有的时候是，在给容器里面的内容定位后，容器本身没有定位，
+                              在容器剧中后定位会发生变化，要看好定位的父元素于容器之间的定位关系
+
+                              在不布局中，第一个后代不用加点，而后面的需要加点。
+
+                             jQ对象:
+                                jq对象 ->  js原生对象  $('odj')obj.get(0) 或者  $obj[0]
+                                js原生对象 ->  jq对象    $(obj)
+
+                           1   window.onload=function(){
+
+                              };窗口加载，包括图片视频，是后执行的。只有一个onload,再有会被替换
+
+
+                         2     文档准备就绪函数（标准写法）
+                             $(document).ready(function(){
+
+
+                             });
+                             (简写版)
+                             $(function(){
+
+
+
+                             });
+                             两个是差不多，但是后者是hrml的结构加载完就可执行，可以多个使用
+                             前者是在其他的加载完后在执行，需要加载完资源文件方可执行，
+----------------------------------------------------------------------------
+     选择器
+
+        header 选中所有标题
+        not()  除啦（）的字符串
+        eq()    (':eq(index)') 在描述的集合中选择索引值 index:要匹配的索引值的从开始的计数
+        even    (':even')  偶数(13 5.... )0 开始计数 也可以查看 odd.
+        odd    基数
+        first   (":first") :first伪类选择器相当于:eq(0)。它也可以写为:lt(1)。虽然:first只匹配一个单独的元素，
+                           但是:first-child选择器可以匹配多个：即为每个父级元素匹配第一个子元素。
+        :gt()   (":gt(index)")   index: 从0开始计数的索引值。
+                 (":gt(-index)")   index: 从0开始计数的索引值。从最后一个元素开始反向计数
+
+         header    (":header")   选项所有的标题元素  如：h1 h2 h3 等
+          :lt() Selector     选择匹配集合中所有索引值小于给定index参数的元素。
+
+ 404 是路径.网址。引入的错误！
+
+
+
+
+-----------------------------------------
+         移动端：
+         meta：vp  快捷方式
+          <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+          自适应手机屏幕大小
+一个em对自己父元素的font-size的2倍。而最小的父元素的font-size是12px，rem是根元素的font-size的2倍，
+
+zepto.js前段框架 手机端  可以选装要用的功能 API
+
+---------------------------------------------
+ES6
+
+函数闭包；是外部函数的局部变量，被外部函数输出，但是在调用的时候循环外部函数与内部函数，外部函数的局部变量
+被一直引用，所以就可以用被引用，而不被一直使用的而作废。
+----------------------
+
+//函数立即调用
+//    var f2 = function(index){
+//        console.log(11111);
+//    }
+//
+//    f2(i);
+//
+//    (function(index){
+//        console.log(11111);
+//    })(i);
+两个函数是等价的
+for(var i=0;i<aLi.length;i++){
+        (function(index){
+            aLi[index].onclick = function(){
+                console.log(index);
+            }
+        })(i);
+    }
+使用的例子点那个li就输出相应的输出脚标
+
+for(let i=0;i<li.的长；i++){
+ aLi[index].onclick = function(){
+                console.log();
+}
+
+两个都可以使用：使用的例子点那个li就输出相应的输出脚标，的效果
+
+let：
+ 定义变量的关键字：
+   没有变量提升,不能重复声明,暂时性死区(临时失效区),
+   块级作用域
+
+{
+let a = 1
+}
+外部无法得到： 块级作用域
+
+var a = 2
+function(){
+let a = 1
+}
+外部也无法得到a=1，var是无法改变a的值：暂时性死区(临时失效区),
+
+const的定义常量
+
+const NUM={
+name='zs'
+age='12'
+}
+Object.freeze(NUM);freeze是冻结的意思和作用，O是大写
+NUM.name='lisi';大写是一定的固定
+console.log(NUM);
+是获取不到的
+他又和let一样的属性：有变量提升,不能重复声明,暂时性死区(临时失效区),
+                      块级作用域
+------------------------------------------------------------------------
+
+ES6    块级作用域只有对let,const有用的其他没有用  var还是一样的没有用
+const let var 三者的区分：
+在es6下改var 为 let 或者 const 、 var可以完全替换成 let  、 需要注意的是 let 与 const 区别并不大，let 是变量，const 是常量。
+
+只要定义的不会改变就用 const
+
+
+ES6新增let和const两个变量声明命令，他们都具有如下特性：
+1、块局作用域；
+2、不存在变量提升，一定声明后才能使用；
+3、暂时性死区，在代码块内使用let命令声明变量之前，该变量都是不可用的，不受外部变量影响；
+4、在相同作用域范围内不允许重复声明；
+const与let不同点在于：
+1、const如果声明的变量是简单的值，则不能改变变量的值，修改会报错；
+2、const如果声明的是复合类型的变量，则只保证变量地址不变，值可以变；
+
+-----------------------------------------------------------------------
+
+箭头函数  fn.call[o,1],fn.apply(o.arr).fn.bind(o,1)
+四个都可以改变this指向，前三个可以直接执行的，而bind的是立即返回，在次重传。
+ function fn(a,b){
+        console.log(a,b);
+        console.log(this);
+    }
+
+    var o = {
+        name:'zs'
+    }
+
+   fn.call(o,1);
+   var arr = [1,2];
+   fn.apply(o,arr);
+
+   var f = fn.bind(o,1,2);
+    f();
+---------------------------------------------------------------
+扩展运算
+    var a1 = [1,2,3];
+    var a2 = [...a1,4,5];
+    console.log(a1);
+    console.log(a2);
+
+var a = 'name'
+obj.name= 'zs'把a换成name
+obj[a]= 'zs'
+一个变量是一个动态的属性名字，要用【】+
+ var a=1,b=50;
+    var str1 =`<div>${ a + b==5? true:false }</div>`;
+    console.log(str1);
+字符串简写用=`   ${  }  `
+=================================================
+   var str = '宝宝心里苦';
+//
+//    console.log(str.includes('宝宝',2));//
+//    console.log(str.startsWith('宝宝',2));
+//    console.log(str.endsWith('宝宝',2));
+
+    console.log(str.repeat(3));
+includes  startsWith  endsWith  (连续的字符串,值)
+includes       有没有连续的字符串，在str中  加入值为2  有没有一个连续的字符串的从前往后数第2后判断
+startsWith     有没有以一个连续的字符串开始 加入值为2  有没有一个连续的字符开始的从前往后数第2后判断
+endsWith        有没有以一个连续的字符串结束   加入值为2  有没有一个连续的字符从后往前的最后两个判断
+=============================================================================================
+
+对象简写：当对象没有值，只有名没有值，他就会找他的同名变量的值，就叫是对像属性简写
+var n = 'xxxxx'
+var obj = {
+     n,
+     age=12
+}
+obj是对象n是它的对象
+=============================================================================================
+对象的操作动态属性
+var str = 'my';
+var n = 'xxxxx';
+var obj = {
+     n,
+     age=12
+     myName:'this is a name'
+}
+console.log(obj[str + 'Name'])
+
+也可以在里面加
+var str = 'my';
+var n = 'xxxxx';
+var obj = {
+     n,
+     age=12
+     [str + 'Name']:'this is a name'
+}
+console.log(obj)
+
+但是不能像同是出现，里外不能同时有一样的状况，会立即报错
+============================================================================
+对象
+var obj = {
+   a= 1,
+   b=2
+}
+console.log(Object.assign(obj,{c=3,d=4}))会和拼两个的属性可以多个合在一起
+
+console.log(Object.assign{
+c=3,
+d=4
+})可以合拼并且返回一个新的地址，如果定义好的话
+还可以有浅拷贝和深拷贝
+obj.a.age = 15 通常是拷贝一层
+========================================================================================
+是版本问题
+console.log(0==0);//true
+console.log(-0==0+);//true
+console.log(NaN==NaN)f//;false
+改成
+console.log(Object.is(0==0)));//false
+console.log(Object.is(-0==0+));//false
+is判断值和类型和   ===   是一样的
+判断一个字符串有没有不是值得以前用 indexof
+console.log(arr.indexof(NaN)  匹配到第一个返回
+===================================================================================
+str = 'abc';
+console.log(str.padStart(10,'1234');
+是在原的数组上添加新的到十个长度，不够从'1234'中添加，从前面添加到10长度为止，不够就在次的循环'1234'中添加，到都为止
+padend是从后面开始添加，其他和上面一样
+====================================================================================
+webpack:
+
+同样的错误犯了多次，太不张记性了，记住这个单词！
+EADDRINUSE： 给定的地址已经被使用
+端口被占用:
+ENOTFOUND
+断网
+安装目录npm init 敲回车2次
+
+code  ELIFECYCLE
+---------------------------------------------------------------------------
+vue
+
+js splice的属性
+splice( )
+当一个参数的时候，将该参数为下标，下标后面的所有被强制删除
+
+1.删除-用于删除元素，两个参数，第一个参数（要删除第一项的位置），第二个参数（要删除的项数）
+
+2.插入-向数组指定位置插入任意项元素。三个参数，第一个参数（插入位置），第二个参数（0），第三个参数（插入的项）
+
+3.替换-向数组指定位置插入任意项元素，同时删除任意数量的项，三个参数。第一个参数（起始位置），第二个参数（删除的项数），第三个参数（插入任意数量的项）
+
+
+  基本格式
+    <div id="app">// 挂载
+
+    <div/>
+
+<script src="vue.js"><script/>
+<script>
+var vm =  new Vue({
+      el:'#app',
+      data:{   数据
+      msg:
+      }
+
+})
+
+<script/>
+ v-model 是双向的变量，data数据通过v-model处理绑定在DOM里
+        DOM改啦  DOM监听随之改变，所以数据data就改变啦
+
+指令 v-text="xxx"
+     v-if=""并且v-else=""必须要跟在v-if=""后面
+ 1：   (val,index) in xxx"
+val值  index索引 in关键字  xxx对象  参数不可以改变位置
+2：   v-for=" i in  3"
+        {{对象 }}
+是将对象循环3次，从1开始，循环三次
+3: v-for="(val,a,index) in obj"是循环对象
+ val 值 a键 index索引 in 关键字   obj
+ 括号里面的循序固定的，下面可以改顺序
+
+字符串可以在括号里面拼接
+{{val+'，’+a+','+i}}
+{{val}},{{a}},{{i}}
+computed 计算属性，是通过其他属性计算过来的属性
+只要是监控的属性变啦，重新计算，
+
+在绑定事件时候有2个参数fn（a,event）
+只有传参数fn(a)时候上面的fn()加括号写参数，如果不传参数的只是接收上面event，上面的fn不需要加括号，下面是可以接收到的
+
+js.中indexOf(index)的方法  是判断是否包括他，要是包括他就返回相应得index（下脚标），没找到返回-1
+
+钩子函数
+执行事件钩子  beforcreste
+事件钩子开始执行 cerated 自动更新
+开始执行beforeMount挂载钩子，注意此时还没有生成html到页面上去  beforeMount
+mounted 挂载完成，也就是模板中的html渲染到啦，此时一般可以做一些ajax操作
+mounted只会执行一次!
+beforeUpdate 跟新之前的事件钩子
+updated跟新之后的钩子
+beforDestroy vue实例销毁前执行的钩子
+destroyed vue实例销毁
+
+=============================================================================================
+vuecli3
+---------
+scoped 在style的标签里，是表示只在当前文件里有效
+@代表src文件夹
+es6当只有属性名没有属性值，默认和他属性名相同的属性值一样
+组件{需要引文件 import xx from '' 定义 component：{xx } 使用 <xx></xx>}
+main.js 是入口的js文件
+vue.config.js  配置文件
+第一个是选项
+module.exports = {
+    lintOnSave:false;值是否
+    dveServe:{
+            port:8081端口，是改变的端口的方式
+        }
+
+}
+--------
+一个组件里面只能有一个根标签
+<template>
+    <div>
+        只能有一个包含所有的标签，
+    </div>
+</template>
+--------
+参数传值方式
+:to='{name:'路径',params:{对象/其他的}}'  父亲组件(动态属性的加冒号)
+{{$router.params.xx}}                    子组件接受（上面的使原本，下面的需要加this.）
+
+url传参数
+标签的路径中后面 /xxx
+在路由的path中 /test/:xxx
+在使用中直接接受就可以
+{{$router.params.xxx}}
+------------  -
+过度动效
+<tansition name='xx'>
+ <router-viwer/>
+</tansition>
+<style lang='scss'>
+.xx-enter{
+进入
+}
+.xx-enter-active{
+
+}
+.xx-enter-to{
+
+}
+.xx-leave{
+离开
+}
+.xx-leave-active{
+
+}
+.xx-leave-to{
+
+}
+</style>
+-----------------------
+获取的父组建的值
+首先在子组件绑定事件上面
+    @click="$emit('xxx',参数)"括号里面的必须是！字符串
+之后在父组建绑定的事件
+    @xxx="fn"
+在子组件上加方法
+    methods:{
+        fn( a ){
+            this.
+        }
+    }
+
+---------
+store(固定语法)
+xxx,事件 yyy参数 （见v-app中的实例）！！！很重要
+    state:{
+        xxx:''
+    }
+    mutations:{
+        xxx(state,yyy){
+            state.xxx = yyy;
+        }
+    }
+    actions:{
+        xxx({commit},yyy){
+            commit('xxx',yyy)
+        }
+    }
+--------------------------------------------------
+elem  是对象的结构
+
+
+事件冒泡解决什么问题：
+1：当子元素太多，可以给其父元素绑定。
+2：后生成的元素的绑定事件，可以用冒泡的来解决。
+
+ js获取内联样式
+  console.log(getComputedstyle(oDiv,null/false),width;)
+在标准浏览器中可以
+Ie6是有兼容性问题的（ie6是没有控制台的）
+alert(oDiv,cyrrentStyle.width);在ie6中可以获取到的
+js
+
+offsetwidth\offsetHeight:是包括 padding border 文本
+offsetLeft\offsetTop：是离它最近的定位的祖先元素的两者之间的距离
+offsetParent：离他最近的祖先元素的
+\offsetwidth\offsetHeight\offsetLeft\offsetTop\offsetParent
+
+JQ
+width( ) inerWidth( ) outerWidth( )/(true )+maring
+内容    内容+padding   内容+padding+border
+
+css3
+new---属性（有兼容性问题）
+
+前缀
+ -webkit-xxx         chrome 和 safari  谷歌和苹果
+ -moz-xxx            firefox   火狐
+ -ms-xxx               IE
+ -o-xxx              opera 哦鹏
+ xxx                   标准
+
+选择器css3
+-------------------------------------------
+ajax 状态码
+
+    readyState有5种值
+    0：请求未初始化
+    1：服务器链接已建立
+    2：请求已接收
+    3：请求处理中
+    4：请求已完成，且响应已就绪
+
+    status 状态码常见的有
+    200 服务器成功返回
+    301 永久重定向
+    302 临时重定向
+    404 资源找不到
+    500 服务器错误
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
