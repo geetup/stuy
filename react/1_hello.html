@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--div 有一个包含所有-->
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    //jsx 方法
+    ReactDOM.render(
+        <div>我是一个小白</div>,
+        document.getElementById('root')//有一个跟元素
+    )
+    // ReactDOM.render(
+    //     <div>
+    //         <h1>hello world</h1>
+    //         <p>对方过后就考虑；</p>
+    //     </div>
+    //     ,
+    //     document.getElementById('root')
+    // );
+</script>
+</body>
+</html>

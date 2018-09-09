@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                msg:100
+
+            }
+        }
+        change(){
+            this.setState({
+                msg:100
+            })
+        }
+        render(){
+            return(
+                <div>
+                    <h3>全部灵将数量:{this.state.msg }</h3>
+                    <Product name="A队派出的灵力数"></Product>
+                    <Product name="B队派出的灵力数"></Product>
+                </div>
+            )
+        }
+    }
+    class Product extends React.Component{
+        constructor (props){
+            super (props);
+            this.state={
+                vm:100
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <span >{this.props.name}:{this.state.vm}</span>
+                    <br/>
+                    <button >派出</button>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main></Main>
+        ,
+        document.getElementById('root')
+    )
+
+
+</script>
+</body>
+</html>

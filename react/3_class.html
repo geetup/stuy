@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的组建的建立</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel" >
+    class Welcome extends React.Component {
+        constructor (props){
+            super(props);
+            this.state = {
+               count:0
+            }
+
+        }
+
+        add(unm){
+            console.log(unm,event)
+        }
+        render(){
+            return (
+                <div>
+                    <button onClick={this.add.bind(this,1)} ref="btn">click</button>
+                    <h1 ref="h">{ this.props.name}{this.props.age} {this.props.children}</h1>
+                </div>
+            )
+
+        }
+    }
+    ReactDOM .render(
+        <Welcome name="小白" age="12">6666</Welcome>,
+        document.getElementById('root')
+    )
+</script>
+</body>
+</html>

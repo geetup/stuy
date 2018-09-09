@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+
+<script type="text/babel">
+    let Welcome =(props)=>{
+        return (
+            <div>
+                <h2>我是{props.name}</h2>
+                <h1>你{props.description}</h1>
+                // <h3> {props.children}</h3>
+            </div>
+        )
+    };
+    ReactDOM.render(
+        <Welcome name="小白" description="哈哈哈"/>,
+        document.getElementById('root')//有一个跟元素
+    )
+
+
+</script>
+</body>
+</html>

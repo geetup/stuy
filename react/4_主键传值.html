@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component{
+        constructor (props){
+            super (props);
+            this.state={
+                msg:'商品列表'
+            }
+        }
+        change(msg){
+            this.setState({
+                msg:'电网商城'
+            })
+        }
+        render(){
+            return (
+                <div>
+                    <h1>{this.state.msg}</h1>
+                    <Product name="电视" myClick={this.change.bind(this)}></Product>
+                    <Product name="手机"></Product>
+                    <Product name="平板"></Product>
+
+                </div>
+            )
+        }
+    }
+class Product extends React.Component{
+        constructor (props){
+            super (props)
+        }
+        render(){
+            return(
+                <div onClick={this.props.myClick}>
+                    <span>{this.props.name}</span>
+                </div>
+            )
+        }
+}
+
+
+    ReactDOM .render(
+        <Main></Main>,
+        document.getElementById('root')
+    )
+</script>
+</body>
+</html>
