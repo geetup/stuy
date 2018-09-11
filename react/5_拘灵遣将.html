@@ -17,20 +17,20 @@
             super(props);
             this.state={
                 msg:100
-
             }
         }
         change(){
             this.setState({
-                msg:100
+                msg:this.state.msg+10
             })
         }
         render(){
+            //渲染的东西
             return(
                 <div>
                     <h3>全部灵将数量:{this.state.msg }</h3>
-                    <Product name="A队派出的灵力数"></Product>
-                    <Product name="B队派出的灵力数"></Product>
+                    <Product name="A队的灵力数" fatherCall={this.change.bind(this)}></Product>
+                    <Product name="B队的灵力数" fatherCall={this.change.bind(this)}></Product>
                 </div>
             )
         }
@@ -47,18 +47,17 @@
                 <div>
                     <span >{this.props.name}:{this.state.vm}</span>
                     <br/>
-                    <button >派出</button>
+                    <button onClick={()=>{this.props.fatherCall();this.setState({
+                        vm:this.state.vm-10
+                    })} }>派出</button>
                 </div>
             )
         }
     }
     ReactDOM.render(
-        <Main></Main>
-        ,
+        <Main></Main>,
         document.getElementById('root')
     )
-
-
 </script>
 </body>
 </html>

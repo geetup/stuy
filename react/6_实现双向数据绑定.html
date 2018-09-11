@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>只有表单之类的有双向数据绑定</title>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component{
+    constructor (props){
+        super(props);
+        this.state={
+            msg:'weicome'
+        }
+     }
+     change(event){
+        this.setState({
+            msg:event.target.value
+        })
+     }
+     render(){
+        return(
+         <div>
+             <h1 >{this.state.msg}</h1>
+             <input type="text" defaultValue={this.state.msg} onChange={this.change.bind(this)}/>
+         </div>
+        )
+        }
+    }
+    ReactDOM.render(
+        <Main></Main>,
+        document.getElementById('root')
+    );
+
+</script>
+</body>
+</html>
