@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tlod{
+            text-align: center ;
+        }
+        .heaer{
+            margin: 100px auto ;
+            background: #d2e5ff ;
+            width: 400px;
+
+        }
+        .btn{
+            background: #00ff00 ;
+            width: 80px;
+            height: 30px;
+            text-align: center ;
+        }
+        .list{
+            background: #d2e5ff ;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<script type="text/babel">
+    class Main extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state={
+                list:[
+                    {
+                        name:'吃饭'
+                    },
+                    {
+                        name:'吃饭'
+                    },
+                    {
+                        name:'玩手机'
+                    }
+                ]
+            }
+        }
+        saveHandle(val){
+            // console.log(1111)
+            //不能够直接操作dom元素，需要赋值的间接操作
+            var arr = this.state.list;
+            arr.push({name:val});
+            this.setState({
+                list:arr
+            })
+        }
+        render(){
+            return(
+                <div className="heaer">
+                    <h1 className="tlod" >Todolist</h1>
+                    <Save myClick={this.saveHandle.bind(this)}></Save>
+                    <ul>
+                        {
+                            //item 是对象  index是对象
+                            this.state.list.map((item,index)=>{
+                                return <ListItem key={index} item={item} ></ListItem>
+                            })
+                        }
+                        <li>0已完成/0全部</li>
+                    </ul>
+                </div>
+            )
+        }
+    }
+    class Save extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+        save(){
+            if(this.refs.myText.value){
+                // console.log(this.refs.myText.value)
+                this.props.myClick(this.refs.myText.value);
+                //    修改val为空
+                this.refs.myText.value = ''
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <div>
+                        <label htmlFor="name">任务</label>
+                        <input id="name" type="text" ref="myText" placeholder="请输入任务名称...." />
+                    </div>
+                        <button onClick={this.save.bind(this)}>保存任务</button>
+                </div>
+            )
+        }
+    }
+    class ListItem extends React .Component {
+        constructor (){
+            super()
+        }
+        shanchu(){
+          sonlole.log(this.props.index )
+            // this.props.event.target()
+        }
+        render(){
+            return(
+                <li>
+                    <input type="checkbox" checkbox="index"/>
+                    <span>{this.props.item.name}</span>
+                    <button onClick={this.shanchu.bind(this.index)}>删除</button>
+                </li>
+            )
+        }
+    }
+    ReactDOM.render(
+        <Main></Main>,
+        document.getElementById('root')
+    );
+
+</script>
+</body>
+</html>
