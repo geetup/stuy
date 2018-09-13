@@ -669,10 +669,57 @@ ajax 状态码
     404 资源找不到
     500 服务器错误
 
+==================================================
+
+视图中肯定会用到表单的。
+
+reactjs之表单
+
+在form标签上绑定onSubmit方法，当button提交时触发。处理函数需要阻止默认提交。
+
+props用来传递固定不变的对象，状态对象就需要用this.state来存储了。
+
+input textarea select 标签绑定状态可以用value={this.state.xx}
+
+但是这样绑定预览时input是不能修改的。无法实现双向。可以用defaultvalue属性来绑定。
+
+这样就可以修改了。但是input修改了。组件的状态属性来是原来的。
+
+要想实现双向就需要绑定修改事件了onChange(峰式命名)。
+
+事件中用e.target.value来获取值，并用this.setState()来修改。
+
+radio checkbox的处理：
+
+每个radio都需要绑定onChange事件
+
+radio事件直接用值e.target.value  和this.setState来修改。
+
+checkbox就麻烦了。
+
+需要先获取value 和checked是否选中。
+
+并得到当前状态的数组，用indexOf(value)来判断是否存在。
+
+当选中并且不在数组中就concat(value)
+
+当未选中且存在数组用splice(index,1)来删除。
+
+最后setState修改数组。
 
 
 
+当有很多的input select textarea时绑定事件就麻烦了。
 
+这时可用refs.XX
+
+在标签上添加ref="name"属性。
+
+在submit上用this.refs.name.getDOMNode().value来获取值。
+
+但radio checkbox还是需要用onchange事件的
+=========================================================================================
+                                   总结
 
 
 
