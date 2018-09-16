@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="txt">
+    <input type="password">
+    <input type="hidden">
+    <input type="radio" v-model="sex" value="n">女
+    <input type="radio" v-model="sex" value="m">男
+    <input type="checkbox" v-model="sport" value="足球">足球
+    <input type="checkbox" v-model="sport" value="篮球">篮球
+    <input type="checkbox" v-model="sport" value="乒乓球">乒乓球
+</div>
+<script src="vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            txt:'xx',
+            sex:'n',
+            sport:['足球']
+            
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    function request(url){
+        $.get(url,res=>{
+        console.log(res);
+            return 0;
+        })
+    }//异步操作
+    function* fn(){
+        yield request ('a.json');//每一值都需要重新赋值
+        yield request ('b.json');
+        yield request ('c.json');
+        return 0;
+    }
+    var g = fn ();
+    var a = g.next();//是相当于指针，看你当前执行到第几步
+    console.log(a);
+
+</script>
+</body>
+</html>

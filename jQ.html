@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dome</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0 ;
+        }
+        #small,#big{
+            width: 400px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            cursor: move;
+        }
+        #big{
+            display: none;
+        }
+        #drag {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: .5;
+            display: none;
+        }
+        #big img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="small">
+<img src="DOM/img/6.jpg"/>
+    <div id="drag">
+
+    </div>
+</div>
+<div id="big">
+    <img src="DOM/img/5.jpg"/>
+</div>
+<script>
+    var oSmall = document.getElementById ('small');
+    var oDrag = document.getElementById('drag');
+    var oBig = document.getElementById('big');
+    var oBigImg = oBig.getElementsByTagName('img')[0];
+
+    oSmall.onmouseover = function(){
+        oDrag.style. display = 'block';
+        oBig.style.display = 'block';
+
+        oSmall .onmousemove = function( e ){
+            e = e || window.event;
+            var disX = e.clientX - oDrag.offsetWidth /2;
+            var disY = e.clientY - oDrag.offsetHeight /2;
+
+            if( disX>oSmall.offsetWidth -oDrag.offsetWidth ){
+                disX = oSmall.offsetWidth -oDrag.offsetWidth
+            }else if( disX < 0 ){
+                disX = 0 ;
+            }
+
+            if(disY > oSmall.offsetHeight - oDrag.offsetHeight){
+                disY = oSmall.offsetHeight - oDrag.offsetHeight
+            }else if(disY < 0){
+                disY = 0;
+            }
+
+
+
+            var xxx = disX / (oSmall.offsetWidth - oDrag.offsetWidth);      //两个图片的比例缩放的计算
+            var bigX = xxx * (oBigImg.offsetWidth - oBig.offsetWidth);
+
+            var yyy = disY / (oSmall.offsetHeight - oDrag.offsetHeight);
+            var bigY = yyy * (oBigImg.offsetHeight - oBig.offsetHeight);
+
+
+            oBigImg.style.left = -bigX +'px';
+            oBigImg.style.top = -bigY +'px';
+
+
+
+            oDrag.style.left = disX + 'px';
+            oDrag.style.top = disY + 'px';
+
+        }
+    };
+    oSmall.onmouseout = function () {
+        oDrag.style.display = 'none';
+        oBig.style.display = 'none';
+    };
+</script>
+</body>
+</html>

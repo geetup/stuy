@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: none ;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app" >
+    <input type="text" @keyup="search" v-model="val" >
+    <button @click="add">add</button>
+    <ul>
+        <li v-for="(xx,index) in arr" :class="{red:xx.active}" @click="xx.active = !xx.active">
+          {{xx.value}}
+            <button @click="del">del</button>
+          <!--&lt;!&ndash;:class="{red:xx.active}" @click="xx.active = !xx.active"&#45;&#45;是利用分类改变点击的颜色变化>-->
+        </li>
+    </ul>
+</div>
+<script src="vue.js" ></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            arr:[],//空的数组
+            val:'',//获取输入数组的值
+            showArr:[],
+        },
+       methods:{
+            add(){
+               this.arr.push({value:this.val,active:false});//将新输入的加入数组
+               this.val='';//点击后清空状态，状态重置
+                this.arr.sort(function(a,b){
+                    return a.value-b.value;//将输出的数组进行排大小，在输入的时候进行判断
+                });
+                this.showArr =  this.arr;//改变数组
+            },
+            search(){
+                var newArr = this.arr.filter ((elem,index)=>{//筛选数组，在最开始输入的时候就判断筛选，
+                    return elem.value.indexOf (this.val)!=-1;//筛选的条件看是否’=-1‘
+
+                });
+                this.showArr = newArr;//改变输入的数组
+
+            },
+            del(){
+                this.arr.splice (this.index ,1);
+            }
+        }
+    })
+</script>
+</body>
+</html>

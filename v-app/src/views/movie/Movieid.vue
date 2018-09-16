@@ -1,7 +1,7 @@
 <template>
-    <div class="movie-movieid" v-if="show">
-        <h3>名称：{{Movieid.title}}</h3>
-        <img :src="Movieid.images.small" alt="">
+    <div class="movieid" v-if="show">
+        <h3>名称一出好戏</h3>
+        <!--<img :src="Movieid.images.small" alt="">-->
         <p>id:{{Movieid.id}}</p>
         <p>简介：{{Movieid.summary}}</p>
     </div>
@@ -20,7 +20,7 @@
                 var movieId = this.$route.params.id;
                 Axios.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/subject/'+movieId)
                     .then((res)=>{
-                        console.log(res.data);
+                        console.log(res.data.title);
                         this.Movieid = res.data;
                         this.show = true;
 

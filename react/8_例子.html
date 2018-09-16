@@ -23,6 +23,12 @@
             background: #d2e5ff ;
             width: 400px;
         }
+        .selected {
+            background: #FFF38F ;
+        }
+        .selected span{
+            text-decoration:line-through;
+        }
     </style>
 </head>
 <body>
@@ -37,15 +43,22 @@
         constructor(props) {
             super(props);
             this.state={
+                count:0,
                 list:[
                     {
-                        name:'吃饭'
+                        id:0,
+                        name:'吃饭',
+                        isFinished:true
                     },
                     {
-                        name:'吃饭'
+                        id:1,
+                        name:'吃饭',
+                        isFinished:false
                     },
                     {
-                        name:'玩手机'
+                        id:2,
+                        name:'玩手机',
+                        isFinished:false
                     }
                 ]
             }
@@ -54,10 +67,45 @@
             // console.log(1111)
             //不能够直接操作dom元素，需要赋值的间接操作
             var arr = this.state.list;
-            arr.push({name:val});
+            arr.push({
+                id:this.state.list[this.state.list.length-1].id+1,
+                name:val,
+                isFinished:false
+            });
             this.setState({
                 list:arr
             })
+        }
+        sub(index){
+            // console.log(index)
+            let arr = this.state.list;
+            arr.splice (index,1);
+            this.setState({
+                list:arr
+            })
+        }
+        change(){
+            let arr = this.state.list;
+            arr[index].isFinished = !arr[index].isFinished;
+            this.setState({
+                list:arr
+            });
+            fn()
+        }
+        fn(){
+            let arr = this.state.list;
+            let num = 0 ;
+            arr.forEach ( item=>{
+                if(item.isFinished ){
+                    num++
+                }
+            })
+            this.setState({
+                conunt:num
+            })
+        }
+        componentDidMount(){
+            this.fn();
         }
         render(){
             return(
@@ -68,10 +116,10 @@
                         {
                             //item 是对象  index是对象
                             this.state.list.map((item,index)=>{
-                                return <ListItem key={index} item={item} ></ListItem>
+                                return <ListItem key={index} index={index} item={item} sub={this.sub.bind(this)} change={ this.change.bind(this)}></ListItem>
                             })
                         }
-                        <li>0已完成/0全部</li>
+                        <li>{this.state.count}已完成/{this.state.list .length }全部</li>
                     </ul>
                 </div>
             )
@@ -102,19 +150,22 @@
         }
     }
     class ListItem extends React .Component {
-        constructor (){
-            super()
+        constructor (props){
+            super(props);
+
         }
-        shanchu(){
-          sonlole.log(this.props.index )
-            // this.props.event.target()
-        }
+
         render(){
             return(
-                <li>
-                    <input type="checkbox" checkbox="index"/>
-                    <span>{this.props.item.name}</span>
-                    <button onClick={this.shanchu.bind(this.index)}>删除</button>
+                //能够获取li的
+                <li className={ this.props.item.isFinished ?'selected':''}>
+                    <input type="checkbox"
+                           defaultChecked ={this.props.item.isFinished }
+                           onClick={ ()=>{ this.props.change(this.props.index)}}/>
+                    <span >{this.props.item.name}</span>
+                    <button onClick={ ()=>{
+                        this.props.sub(this.props.index)
+                    }} >删除</button>
                 </li>
             )
         }
@@ -123,7 +174,6 @@
         <Main></Main>,
         document.getElementById('root')
     );
-
 </script>
 </body>
 </html>

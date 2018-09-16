@@ -22,7 +22,7 @@
         </thead>
         <tbody id="product-list">
         <tr v-for="(p,i) in p_list">
-            <td><input type="checkbox" v-model=checkList'checkList' :value="p"></td>
+            <td><input type="checkbox" v-model='checkList' :value="p"></td>
             <td><img src="" alt="" width="100"></td>
             <td>{{p.productName}}</td>
             <td>
@@ -34,9 +34,9 @@
             </td>
             <td class="price">{{p.productPrice}}</td>
             <td>
-                <button@click="sub(p)">-</button>
+                <button @click="sub(p)">-</button>
                 <input type="text" v-model="p.productQuentity" @blur='filter(p)'>
-                <button class="add" @click="p.productQuentity++">+</button>
+                <button  @click="p.productQuentity++">+</button>
             </td>
             <td class="total-price">{{p.productQuentity * p.productPrice}}</td>
             <td><a href="javascript:;"  @click="del(i,p)">删除</a></td>
@@ -63,7 +63,7 @@
             p_list:[],
             checkList:[]
         },
-        create(){
+        create(){//钩子函数与data文件一个平行级的函数
             //返回的是promise对象
             axios.get('cart.json').then((res)=>{
                 this.p_list = res.data.result.productList;
@@ -89,7 +89,7 @@
             },
             del(i,p){
                 // this.p_list.splice(i,1) ;
-                this.p_list.splice(this.checkList.indexOf(p),1 );
+                this.checkList.splice(this.checkList.indexOf(p),1 );
             }
         }
 

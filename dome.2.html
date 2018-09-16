@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style: none;//点
+        }
+        a{
+            text-decoration: none;//链接颜色取消
+        }
+        #menu{
+            width: 200px;
+            border: 2px solid #63a35c;
+            margin: 100px auto;
+        }
+        #menu>li{
+            text-align: center ;
+        }
+        #menu a{
+            display: block;
+            width: 100%;
+            background: #00ff00;
+            color: black;
+        }
+        #menu .sub-menu li{
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li>
+        <a href="">管理区</a>
+        <ul class="sub-menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+    <li>
+        <a href="">交流区</a>
+        <ul class="sub-menu">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var aA = document.getElementsByTagName() ('a');
+    var oUl = document.getElementById('menu');
+    var aSubMenu = document.getElementsByTagName ('ul');
+
+    for( var i = 0;i<aA.length;i++){
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

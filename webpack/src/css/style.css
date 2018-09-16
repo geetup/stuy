@@ -1,0 +1,21 @@
+div{
+    width: 200px;
+    background:url("../img/hzw.jpg ");
+}
+div p{
+    display: block;
+    width: 200px;
+    height: 200px;
+    transform: rotate(50deg);
+}
+#div1{
+    width: 250px;
+    height: 250px;
+    transform: rotate(50deg);
+}
+#div2{
+    width: 250px;
+    height: 250px;
+    background: #000;
+    transform: rotate(50deg);
+}

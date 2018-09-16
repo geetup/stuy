@@ -35,7 +35,6 @@
 </style>
 <div id="container" >
 
-
 <div id="big-img" >
 
 </div>
@@ -49,7 +48,7 @@
           str += '<img src="img/'+(i+1)+'.jpg"/>';
       }
       $('#container').append(str);
-    })
+    });
     $('#container').on('tap','img',function(){
         $('#container').hide();
         $('#big-img').show();

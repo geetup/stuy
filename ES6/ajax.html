@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">btn</button>
+<ul id="ul1">
+
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('btn').click(function(){
+       $.get('https://bird.ioliu.cn/v1?url=https://api.douban.com/v2/movie/in_theaters',{name:'zs',passsword:'123'},function (data) {
+           data.subjects.from(function(){
+               var $li = $('<li>${elem.title}</li>');
+               $('#ul').append('li')
+           });
+       })
+    })
+</script>
+</body>
+</html>
