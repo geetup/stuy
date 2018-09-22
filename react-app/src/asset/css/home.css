@@ -1,0 +1,18 @@
+.am-navbar-light{
+    background-color: #00bfae;
+    color:#fff;
+}
+.am-navbar-left, .am-navbar-right{
+    flex: none;
+}
+.am-search{
+    width:100%;
+    background-color:transparent;
+}
+.am-search-cancel{
+    color:#fff;
+}
+.like{
+    font-size: 17px;
+    margin-left: 50%;
+}
