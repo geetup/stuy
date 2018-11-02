@@ -719,8 +719,15 @@ checkbox就麻烦了。
 
 但radio checkbox还是需要用onchange事件的
 =========================================================================================
-                                   总结
+                              vue的npm install 报错
 
+-4048报错
+是内存的缓存问题!
+清除缓存
+npm cache clean --force
+1
+重新安装
+npm install
 
 
 
