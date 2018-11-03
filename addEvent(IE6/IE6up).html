@@ -17,7 +17,7 @@
 </div>
 <script>
     addEvent(div,"click",function(){
-            // alert(this);
+            alert(this,id);
 
     });
    // elem 是对象  type 事件类型  handler 事件处理函数
@@ -25,7 +25,9 @@
         if (elem.addEventListener) {
             elem.addEventListener(type, handler)
         } else if (elem.addEvent) {
-            elem.addEvent("on" + type, handler)
+            elem.addEvent("on" + type, function(){
+                handler.call(elem);
+            })
         } else {
             elem["on" + type] = handler;//elem.onclick=function(){}
         }
