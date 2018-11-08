@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var person = {
+        name:'zs',
+        age:20,
+        father:{
+            name:'zxx',
+            age:50
+        }
+    }
+
+    function clone(obj){ //深克隆
+        var result = {};
+        for(key in obj){
+            if(typeof obj[key] == 'object' ){
+                result[key] = clone(obj[key]);
+            }else{
+                result[key] = obj[key];
+            }
+        }
+        return result;
+    }
+
+    var person2 =  clone(person) ;
+    person.father.name = 'lisi';
+    console.log(person2.father.name);
+
+
+    var str = JSON.stringify(person);
+    var person3 = JSON.parse(str);
+
+
+</script>
+
+</body>
+</html>
