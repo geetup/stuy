@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn">click</button>
+<ul>
+    <li>1</li>
+    <li>2</li>
+</ul>
+事件委托 解决后生成元素的事件绑定问题
+<script>
+    var oBtn = document.getElementById('btn');
+    var aLi = document.getElementsByTagName('li');
+    var oUl = document.getElementsByTagName('ul')[0];
+
+    // for(var i=0; i<aLi.length; i++){
+    //     aLi[i].onclick = function(){
+    //         console.log(this.innerHTML);
+    //     }
+    // }
+
+    oBtn.onclick = function(){
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oUl.appendChild(oLi);
+    }
+    //点击子元素的时候 通过事件冒泡 会触发父元素的点击事件 通过e.target 判断点击的元素
+    oUl.onclick = function(e){
+        if(e.target.tagName == 'LI'){
+            console.log(e.target.innerHTML);
+        }
+    }
+
+
+    $('li').on('click',function(){
+        console.log($(this).html());
+    })
+
+    $('ul').on('click','li',function(){
+        console.log($(this).html());
+    })
+
+</script>
+
+</body>
+</html>
